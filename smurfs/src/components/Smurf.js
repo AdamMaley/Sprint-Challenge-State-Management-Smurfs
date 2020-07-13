@@ -1,19 +1,14 @@
-import React, { useContext } from 'react'
-import { SmurfContext } from "../contexts/SmurfContext.js";
+import React from 'react';
 
-
-const smurf = useContext(SmurfContext);
-
-function Smurf() {
+const Smurf = (props) => {
     return (
         <div>
-        <SmurfContext.Consumer>
-            <h1>{`Hi my name is ${smurf.name}`}</h1>
-            <p>{`I am ${smurf.age} years old.`}</p>
-            <p>{`I am ${smurf.height} tall.`}</p>
-        </SmurfContext.Consumer>
+            <h1>{props.smurf.name}</h1>
+            <p>{props.smurf.age}</p>
+            <p>{props.smurf.height}</p>
+            <p>{props.smurf.id}</p>
         </div>
-    )
+    );
 }
 
 export default Smurf;
